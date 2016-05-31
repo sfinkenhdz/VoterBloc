@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def show
-    render "/home/home"
+    render "/home"
   end
 end
