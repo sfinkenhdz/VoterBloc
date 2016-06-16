@@ -1,0 +1,33 @@
+<div class="team-name"><%= @team.name %></div>
+
+<div class="election">
+  <p>Target Election: </p>
+  <p>Days till Election Day: </p>
+</div>
+
+<div class="goal">
+  <p>Goal: <%= @team.membership_goal %></p>
+  <p>Percent to goal: <%= @team.percent_to_goal %>%</p>
+</div>
+
+<div class="members">
+  <% @team.memberships.each do |membership| %>
+    <%= membership.user.username %>:
+    <%= membership.user.registered %>
+  <% end %>
+  **Voted yes/no after early voting starts**
+</div>
+
+<div class="invited">
+  <% @team.invitations.each do |invitation| %>
+    <p><%= invitation.user.username %></p>
+  <% end %>
+</div>
+
+<div class="declined">
+
+</div>
+
+<div>
+Invite more members.
+</div>

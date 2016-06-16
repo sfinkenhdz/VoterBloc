@@ -19,5 +19,19 @@
 
   <%= link_to "Build your Bloc", new_team_path %>
 
+
+<div id="user-widget">
+  <% if current_user %>
+    Welcome <strong><%= current_user.name %></strong>!
+    <%= link_to "Logout", logout_path, id: "log_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+  <% end %>
+
+  <%= session.inspect %>
+
+
+</div>
+
 </div>
 
