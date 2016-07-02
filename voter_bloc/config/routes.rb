@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :teams
 
   root 'home#show'
-  get "/pages/:page" => "pages#show"
+  get "/pages/about" => "pages#about"
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
