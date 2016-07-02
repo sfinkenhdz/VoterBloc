@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root 'home#show'
   get "/pages/about" => "pages#about"
+  get "/pages/why_vote" => "pages#why_vote"
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
