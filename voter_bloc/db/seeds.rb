@@ -2,7 +2,7 @@
   User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    password: "password",
+    # password: "password",
     email: Faker::Internet.email,
     username: Faker::Internet.user_name,
     voter_registration_status: 1,
