@@ -9,7 +9,7 @@ class Team < ActiveRecord::Base
 
   def percent_to_goal
     @members = self.memberships.count.to_f
-    @percent = (@members/self.membership_goal.to_f) * 100
+    @percent = ((@members/self.membership_goal.to_f) * 100).round(0)
   end
 
   def self.team_size
