@@ -17,4 +17,9 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
   end
 
+  def index
+    # includes => fewer db queries
+    @teams = Team.includes(:elections, :memberships).team_size
+  end
+
 end
