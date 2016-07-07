@@ -1,0 +1,35 @@
+<h2>Top Teams</h2>
+
+<div>
+  <div class="team-header">100+ Voters</div>
+  <% @teams[3].each do |team| %>
+    <p><%= team.name %>:  <%=team.membership_goal %></p>
+  <% end %>
+</div>
+
+<div>
+  <div class="team-header">51-99 Voters</div>
+  <% @teams[2].each do |team| %>
+    <p><%= team.name %>: <%= team.membership_goal %></p>
+  <% end %>
+</div>
+
+<div>
+  <div class="team-header">26-50 Voters</div>
+  <% @teams[1].each do |team| %>
+    <p><%= team.name %>: <%= team.membership_goal %></p>
+  <% end %>
+</div>
+
+<div>
+  <div class="team-header">1-25 Voters</div>
+  <% @teams[0].each do |team| %>
+    <p><%= team.name %>: <%= team.membership_goal %></p>
+    <p> Membership % to Goal: <%= team.percent_to_goal %> %</p>
+  <% end %>
+</div>
+
+
+# default to similar teams and click to see the whole list,
+
+# maybe sortable and searchable or give some options
