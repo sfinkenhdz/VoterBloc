@@ -1,34 +1,44 @@
 <div class="main-container"></div>
 
-<h2>Top Teams</h2>
+<h2>TOP TEAMS</h2>
 
-<div>
-  <div class="team-header">100+ Voters</div>
-  <% @teams[3].each do |team| %>
-    <p><%= team.name %>:  <%=team.membership_goal %></p>
-  <% end %>
-</div>
+<div class="team-index-container">
+  <div>
+    <div class="team-header">100+ Voters</div>
+    <% @teams[3].each do |team| %>
+      <p><%= team.name %>:  <%=team.membership_goal %></p>
+    <% end %>
+  </div>
 
-<div>
-  <div class="team-header">51-99 Voters</div>
-  <% @teams[2].each do |team| %>
-    <p><%= team.name %>: <%= team.membership_goal %></p>
-  <% end %>
-</div>
+  <div>
+    <div class="team-header">51-99 Voters</div>
+    <% @teams[2].each do |team| %>
+      <p><%= team.name %>: <%= team.membership_goal %></p>
+    <% end %>
+  </div>
 
-<div>
-  <div class="team-header">26-50 Voters</div>
-  <% @teams[1].each do |team| %>
-    <p><%= team.name %>: <%= team.membership_goal %></p>
-  <% end %>
-</div>
+  <div>
+    <div class="team-header">26-50 Voters</div>
+    <% @teams[1].each do |team| %>
+      <p><%= team.name %>: <%= team.membership_goal %></p>
+    <% end %>
+  </div>
 
-<div>
-  <div class="team-header">1-25 Voters</div>
-  <% @teams[0].each do |team| %>
-    <p><%= team.name %>: <%= team.membership_goal %></p>
-    <p> Membership % to Goal: <%= team.percent_to_goal %> %</p>
-  <% end %>
+
+  <div>
+    <div class="team-header">1-25 Voters</div>
+    <% @teams[0].each do |team| %>
+      <div class="team-progress">
+        <div class="team-name"><%= team.name %></div>
+        <div>Members: <%= team.memberships.count %> | Goal: <%= team.membership_goal %> | Membership Percent to Goal: <%= team.percent_to_goal %>%</div>
+        <% team.percent_to_goal.times do %>
+          <div class="member-tracker"></div>
+          <% end %>
+          <div class="left-to-goal">...100%</div>
+      </div>
+        <% end %>
+  </div>
+
 </div>
 
 

@@ -19,6 +19,7 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: Helvetica;
+  color: white;
 }
 
 *, *:before, *:after {
