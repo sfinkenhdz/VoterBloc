@@ -1,0 +1,8 @@
+      <div class="team-progress">
+        <div class="team-name"><%= team.name %></div>
+        <div>Members: <%= team.memberships.count %> | Goal: <%= team.membership_goal %> | Membership Percent to Goal: <%= team.percent_to_goal %>%</div>
+        <% team.percent_to_goal.times do %>
+          <div class="member-tracker"></div>
+          <% end %>
+          <div class="left-to-goal">...100%</div>
+      </div>
