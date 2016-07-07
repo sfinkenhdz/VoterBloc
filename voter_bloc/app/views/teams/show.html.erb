@@ -11,12 +11,23 @@
 </div>
 
 <div class="members">
+  <p>
+    Members:
+  </p>
   <% @team.memberships.each do |membership| %>
-    <%= membership.user.username %>:
-    <%= membership.user.registered %>
+    <strong>Username:</strong> <%= membership.user.username %>
+    <br>
+    <strong>Status:</strong> <%= membership.user.registered %>
+    <br>
+    <strong>Voted yes/no after early voting starts:</strong> <% membership.user.votes.each do |user_vote_status| %>
+      <% if user_vote_status.election_id == @team.participations.first.election_id %>
+        <p><%= user_vote_status %></p>
+      <% end %>
+    <% end %>
   <% end %>
-  **Voted yes/no after early voting starts**
 </div>
+
+<br>
 
 <div class="invited">
   <% @team.invitations.each do |invitation| %>

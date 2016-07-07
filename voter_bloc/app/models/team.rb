@@ -38,7 +38,8 @@ class Team < ActiveRecord::Base
       @sorted_teams << @large
       @sorted_teams << @xlarge
   end
+
+  def has_voted?
+    
+  end
 end
-
-
-
