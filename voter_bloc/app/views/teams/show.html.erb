@@ -19,9 +19,9 @@
     <br>
     <strong>Status:</strong> <%= membership.user.registered %>
     <br>
-    <strong>Voted yes/no after early voting starts:</strong> <% membership.user.votes.each do |user_vote_status| %>
-      <% if user_vote_status.election_id == @team.participations.first.election_id %>
-        <p><%= user_vote_status %></p>
+    <strong>Voted yes/no after early voting starts:</strong> <% membership.user.votes.each do |vote| %>
+      <% if vote.election_id == @team.participations.first.election_id %>
+        <p><%= vote %></p>
       <% end %>
     <% end %>
   <% end %>
