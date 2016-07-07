@@ -39,6 +39,3 @@ class Team < ActiveRecord::Base
       @sorted_teams << @xlarge
   end
 end
-
-
-

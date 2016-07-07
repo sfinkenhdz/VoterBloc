@@ -39,5 +39,4 @@ class User < ActiveRecord::Base
       "Not Registered"
     end
   end
-
 end
