@@ -1,0 +1,109 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.outer-box {
+  width: 80%;
+  height: 120px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.row {
+    height: 40px;
+    width: 100%;
+}
+
+.one {
+    background-color: #54778C;
+}
+
+.two {
+    background-color: #54778C;
+}
+
+.three {
+    background-color: #54778C;
+}
+
+.col {
+    display: inline-block;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 5px;
+    padding: 2px;
+}
+
+.col a {
+    text-decoration: none;
+    color: white;
+}
+
+.col a:hover {
+    color: limegreen;
+}
+
+.top {
+    width: 100%;
+    border: solid silver;
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 2px;
+    border-left-width: 4px;
+}
+
+.mid1 {
+    width: 30%;
+    border: solid silver;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 4px;
+}
+
+.mid2 {
+    width: 70%;
+    border: solid silver;
+    border-top-width: 2px;
+    border-right-width: 4px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}
+
+.bot1 {
+    width: 60%;
+    border: solid silver;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+}
+
+.bot2 {
+    width: 40%;
+    border: solid silver;
+    border-top-width: 2px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 2px;
+}
+
+#user-widget {
+    color: orange;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#user-widget a {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+}

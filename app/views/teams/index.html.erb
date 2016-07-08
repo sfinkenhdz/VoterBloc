@@ -1,0 +1,40 @@
+<div class="main-container"></div>
+
+<h2>TOP TEAMS</h2>
+
+<div class="team-index-container">
+  <div>
+    <div class="team-header">100+ Voters</div>
+    <% @teams[3].each do |team| %>
+      <%= render partial: "team_stats", locals: {team: team} %>
+    <% end %>
+  </div>
+
+  <div>
+    <div class="team-header">51-99 Voters</div>
+    <% @teams[2].each do |team| %>
+      <%= render partial: "team_stats", locals: {team: team} %>
+    <% end %>
+  </div>
+
+  <div>
+    <div class="team-header">26-50 Voters</div>
+    <% @teams[1].each do |team| %>
+      <%= render partial: "team_stats", locals: {team: team} %>
+    <% end %>
+  </div>
+
+
+  <div>
+    <div class="team-header">1-25 Voters</div>
+    <% @teams[0].each do |team| %>
+      <%= render partial: "team_stats", locals: {team: team} %>
+    <% end %>
+  </div>
+
+</div>
+
+
+# default to similar teams and click to see the whole list,
+
+# maybe sortable and searchable or give some options
