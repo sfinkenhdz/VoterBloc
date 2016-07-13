@@ -30,6 +30,10 @@ gem 'faker', '~>1.6.2'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+# Figaro for securely configuring ENV vars
+# see https://github.com/laserlemon/figaro for info, including heroku deployment instructions
+gem 'figaro'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
