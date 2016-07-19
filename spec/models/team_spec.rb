@@ -25,3 +25,5 @@ RSpec.describe Team, type: :model do
     expect(team.class.team_size[0].length).to eq(1)
     end
   end
+
+end
