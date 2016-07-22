@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe TeamsController do
-  let(:team1) {Team.create(name: "Dinosaurs", location: "Chicago", membership_goal: 5, organizer_id: 1)}
-  let(:team2) {Team.create(name: "Pigs", location: "Chicago", membership_goal: 15, organizer_id: 1)}
+    let(:team1) {Team.create(name: "Dinosaurs", location: "Chicago", membership_goal: 5, organizer_id: 1)}
+    let(:team2) {Team.create(name: "Pigs", location: "Chicago", membership_goal: 15, organizer_id: 1)}
 
 
   describe "#new" do
