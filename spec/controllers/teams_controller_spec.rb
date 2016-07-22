@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 describe TeamsController do
-    let(:team1) {Team.create(name: "Dinosaurs", location: "Chicago", membership_goal: 5, organizer_id: 1)}
-    let(:team2) {Team.create(name: "Pigs", location: "Chicago", membership_goal: 15, organizer_id: 1)}
-
 
   describe "#new" do
     before(:each) { get :new }
@@ -14,33 +11,26 @@ describe TeamsController do
     it "renders the new template" do
       expect(response).to render_template(:new)
     end
-
-    # it "assigns teams to team-size arrays" do
-    #   expect(assigns(:teams).length).to eq(4)
-    # end
   end
 
   describe "#create" do
-    before(:each) { get :create }
-    it "responds with a 200" do
-      expect(response.status).to eq(200)
+    team = Team.new(name: "Teamy")
+    before(:each) {post :create, team: { name: team.name }}
+
+    it 'saves and assigns new team to @team' do
+      team = assigns(:team)
+      expect(team).to be_kind_of ActiveRecord::Base
+      expect(team).to be_persisted
     end
 
     it "renders the create template" do
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to(root_url)
     end
-
-    # it "assigns teams to team-size arrays" do
-    #   expect(assigns(:teams).length).to eq(4)
-    # end
-
-      # it 'assigns all users to @users' do
-      # expect(assigns(:users)).to match_array users
+    #when invalid
   end
 
   describe "#show" do
     context 'when requested team exists' do
-      # let(:team1) { :teams[rand 4] }
       team = Team.create(name: "Blah")
       before(:each) { get :show, id: team.id }
 
@@ -52,14 +42,17 @@ describe TeamsController do
       expect(assigns(:team)).to eq(team)
       end
 
-      # it "renders the show template" do
-      #   expect(response).to render_template(:show)
-      # end
+      it "renders the show template" do
+        expect(response).to render_template(:show)
+      end
+    end
 
-
+    context 'when requested team exists' do
+      it "throws ActiveRecord::RecordNotFound" do
+        expect { get :show, id: -1}.to raise_exception ActiveRecord::RecordNotFound
+      end
     end
   end
-
 
   describe "#index" do
     before(:each) { get :index }
@@ -75,9 +68,6 @@ describe TeamsController do
       expect(assigns(:teams).length).to eq(4)
     end
   end
-
-
-
 
 end
 
