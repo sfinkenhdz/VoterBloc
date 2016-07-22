@@ -19,8 +19,7 @@ class TeamsController < ApplicationController
 
   def index
     # includes => fewer db queries
-    @teams = Team.all
-    # @teams = Team.includes(:elections, :memberships).team_size
+    @teams = Team.includes(:elections, :memberships).team_size
   end
 
 end
