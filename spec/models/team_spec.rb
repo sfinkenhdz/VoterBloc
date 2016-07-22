@@ -3,13 +3,14 @@ require 'spec_helper'
 
 RSpec.describe Team, type: :model do
 
-  let(:team) {Team.create(id: 1, organizer_id: 1, name: "Fighting Turtles", location: "Chicago", membership_goal: 6)}
-  let(:membership1) {Membership.create(user_id: 1, team_id: 1)}
-  let(:membership2) {Membership.create(user_id: 2, team_id: 1)}
-  let(:membership3) {Membership.create(user_id: 3, team_id: 1)}
+  let(:team) {Team.create(id: 2, organizer_id: 1, name: "Fighting Turtles", location: "Chicago", membership_goal: 6)}
+  let(:membership1) {Membership.create(user_id: 1, team_id: 2)}
+  let(:membership2) {Membership.create(user_id: 2, team_id: 2)}
+  let(:membership3) {Membership.create(user_id: 3, team_id: 2)}
 
   describe 'percent_to_goal' do
     it 'returns the percent of members a team has, compared to the team membership goal' do
+
       team.memberships << membership1
       team.memberships << membership2
       team.memberships << membership3
